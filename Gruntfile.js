@@ -25,6 +25,7 @@ module.exports = function(grunt) {
 			options: {
 				framework: 'jasmine2',
 				launch_in_dev: ['PhantomJS'],
+				launch_in_ci: ['PhantomJS'],
 				before_tests: 'grunt jshint',
 				serve_files: [
 					'node_modules/lodash/lodash.js',
@@ -47,5 +48,6 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-testem');
-    grunt.registerTask('default', ['testem:run:unit']);
+    grunt.registerTask('dev', ['testem:run:unit']);
+    grunt.registerTask('default', ['testem:ci:unit']);
 };
