@@ -6,6 +6,5 @@ app.controller("HelloworldCtrl", function($scope, $http) {
 		$http.get('api/hello').success(function(data) {
 			$scope.content = data.content;
 		});
-		console.log($scope.content);
 	};
 });
